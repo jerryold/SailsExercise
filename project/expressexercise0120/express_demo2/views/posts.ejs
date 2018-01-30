@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+		<html>
+
+		 	<script src="https://code.jquery.com/jquery.min.js"></script>
+		 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		  <head>
+		    <title><%= title %></title>
+		    <link rel='stylesheet' href='/stylesheets/style.css' />
+		  </head>
+		  
+			
+				 <body>
+				      <div class="container">
+				        <div class="jumbotron">
+				          <h1><%= title %></h1>
+				        </div>
+				  
+				        <ul class="nav nav-pills">
+				          <li>
+				            <a class="btn btn-default navbar-btn" href="/posts">查看留言</a>
+				          </li>
+				          <li>
+				            <a class="btn btn-default navbar-btn" href="/posts/new">新增留言</a>
+				          </li>
+				        </ul>
+				  
+				        <table class="table table-striped">
+				          <thead>
+				            <tr>
+				              <th>姓名</th>
+				              <th>留言內容</th>
+				            </tr>
+				          </thead>
+				          <tbody>
+				            <% posts.forEach(function(post){ %>
+				            <tr>
+				              <td>
+				                <p><%= post.name %></p>
+				              </td>
+				              <td>
+				                <p><%= post.msg %></p>
+				              </td>
+				            </tr>
+				            <% }); %>
+				          </tbody>
+				        </table>
+				        
+				      </div>
+				    </body>
+		</html>
